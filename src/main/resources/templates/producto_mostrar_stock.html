@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device - width , initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+	
+
+
+	<h1>Paciente</h1>
+	<table class="table table-dark">
+		<thead>
+			<tr>
+                <th>Codigo de Barras</th>
+				<th>Nombre</th>
+                <th>Stock</th>
+				
+                
+
+			</tr>
+
+		</thead>
+
+		<tbody>
+			<!-- En recursos, afecta que este th:each ?  -->
+			<tr th:each="producto : ${lista}">
+				<form th:object="${producto}" th:method="GET">
+
+					<td th:text="${producto.codigoBarras}"></td>
+					<td th:text="${producto.nombre}"></td>
+					<td th:text="${producto.stock}"></td>
+					
+					
+					
+				</form>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
